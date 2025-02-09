@@ -17,9 +17,7 @@ function App() {
   const [grid, setGrid] = useState<Grid>(JSON.parse(JSON.stringify(emptyGrid)));
   const [turn, setTurn] = useState<Player>("X");
   const [screen, setScreen] = useState<Screen>("table");
-  const [history, setHistory] = useState<HistoryItem[]>([
-    { winner: "X", time: new Date() },
-  ]);
+  const [history, setHistory] = useState<HistoryItem[]>([]);
 
   useEffect(() => {
     if (winner) {
