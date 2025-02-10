@@ -5,7 +5,7 @@ import { playerColorMap } from "../ultil";
 
 const History: React.FC<{ history: HistoryItem[] }> = ({ history }) => {
   return (
-    <div className="fade-in">
+    <div className="fade-in h-full">
       <div className="flex gap-[20px] justify-center items-center text-2xl text-center mb-5">
         <span className={`font-bold ${playerColorMap["X"].color}`}>X</span>
         <span>{history.filter((e) => e.winner == "X").length}</span>
@@ -14,7 +14,7 @@ const History: React.FC<{ history: HistoryItem[] }> = ({ history }) => {
         <span className={`font-bold ${playerColorMap["O"].color}`}>O</span>
       </div>
 
-      <div>
+      <div style={{ height: "calc(100% - 36px)", overflow: "auto" }}>
         {history.map((item) => (
           <div
             key={JSON.stringify(item.time)}
